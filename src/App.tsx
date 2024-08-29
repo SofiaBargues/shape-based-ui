@@ -13,10 +13,14 @@ function App() {
     <>
       <div>hello</div>
       {BOX_DATA.map((row) => (
-        <div>
-          {row.map((cell) => (
-            <div className="border-2 border-black h-10 w-10">{cell}</div>
-          ))}
+        <div className="flex">
+          {row.map((cell) =>
+            cell != 1 ? (
+              <div className={"border-2 h-10 w-10 border-transparent "}></div>
+            ) : (
+              <button className={"border-2 border-black h-10 w-10"}></button>
+            )
+          )}
         </div>
       ))}
     </>
