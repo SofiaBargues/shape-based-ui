@@ -9,6 +9,7 @@ const BOX_DATA = [
 ];
 
 function App() {
+  const [isClicked, setIsClicked] = useState<number[]>([]);
   const rowLength = BOX_DATA[0].length;
 
   return (
@@ -20,7 +21,15 @@ function App() {
             if (cell === 1) {
               const mainIndex = i * rowLength + j;
               return (
-                <button className={"border-2 border-black h-10 w-10"}>
+                <button
+                  onClick={() => {
+                    const arrIsClicked = [...isClicked];
+                    arrIsClicked.push(mainIndex);
+                    setIsClicked(arrIsClicked);
+                    console.log(mainIndex);
+                  }}
+                  className={"border-2 border-black h-10 w-10"}
+                >
                   {mainIndex}
                 </button>
               );
