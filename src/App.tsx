@@ -16,30 +16,20 @@ function App() {
       <div>hello</div>
       {BOX_DATA.map((row, i) => (
         <div className="flex">
-          {row.map(
-            (cell, j) => {
-              if (cell === 1) {
-                return (
-                  <button className={"border-2 border-black h-10 w-10"}>
-                    {i * rowLength + j}
-                  </button>
-                );
-              } else {
-                return (
-                  <div
-                    className={"border-2 h-10 w-10 border-transparent "}
-                  ></div>
-                );
-              }
+          {row.map((cell, j) => {
+            if (cell === 1) {
+              const mainIndex = i * rowLength + j;
+              return (
+                <button className={"border-2 border-black h-10 w-10"}>
+                  {mainIndex}
+                </button>
+              );
+            } else {
+              return (
+                <div className={"border-2 h-10 w-10 border-transparent "}></div>
+              );
             }
-            // cell != 1 ? (
-            //   <div className={"border-2 h-10 w-10 border-transparent "}></div>
-            // ) : (
-            //   <button className={"border-2 border-black h-10 w-10"}>
-            //     {i * rowLength + j}
-            //   </button>
-            // )
-          )}
+          })}
         </div>
       ))}
     </>
