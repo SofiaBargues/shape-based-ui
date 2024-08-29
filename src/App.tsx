@@ -9,16 +9,20 @@ const BOX_DATA = [
 ];
 
 function App() {
+  const rowLenght = BOX_DATA[0].length;
+
   return (
     <>
       <div>hello</div>
-      {BOX_DATA.map((row) => (
+      {BOX_DATA.map((row, i) => (
         <div className="flex">
-          {row.map((cell) =>
+          {row.map((cell, j) =>
             cell != 1 ? (
               <div className={"border-2 h-10 w-10 border-transparent "}></div>
             ) : (
-              <button className={"border-2 border-black h-10 w-10"}></button>
+              <button className={"border-2 border-black h-10 w-10"}>
+                {i * rowLenght + j}
+              </button>
             )
           )}
         </div>
