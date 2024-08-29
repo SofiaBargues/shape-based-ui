@@ -9,7 +9,7 @@ const BOX_DATA = [
 ];
 
 function App() {
-  const rowLenght = BOX_DATA[0].length;
+  const rowLength = BOX_DATA[0].length;
 
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
               <div className={"border-2 h-10 w-10 border-transparent "}></div>
             ) : (
               <button className={"border-2 border-black h-10 w-10"}>
-                {i * rowLenght + j}
+                {i * rowLength + j}
               </button>
             )
           )}
