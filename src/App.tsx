@@ -9,7 +9,7 @@ const BOX_DATA = [
 ];
 
 function App() {
-  const [isClicked, setIsClicked] = useState<number[]>([]);
+  const [numsClicked, setNumsClicked] = useState<number[]>([]);
   const rowLength = BOX_DATA[0].length;
 
   return (
@@ -23,12 +23,16 @@ function App() {
               return (
                 <button
                   onClick={() => {
-                    const arrIsClicked = [...isClicked];
+                    const arrIsClicked = [...numsClicked];
                     arrIsClicked.push(mainIndex);
-                    setIsClicked(arrIsClicked);
+                    setNumsClicked(arrIsClicked);
                     console.log(mainIndex);
                   }}
-                  className={"border-2 border-black h-10 w-10"}
+                  className={
+                    "border-2 border-black h-10 w-10 " +
+                    (numsClicked.includes(mainIndex) ? "bg-lime-700" : "")
+                  }
+                  disabled={numsClicked.includes(mainIndex)}
                 >
                   {mainIndex}
                 </button>
