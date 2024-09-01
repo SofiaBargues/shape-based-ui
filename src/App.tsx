@@ -11,15 +11,24 @@ const BOX_DATA = [
 function App() {
   const [numsClicked, setNumsClicked] = useState<number[]>([]);
   // necesito una variable booleana que sepa si ha sido completadp o no el patron
-  const [completed, isCompleted] = useState(false);
+  const [completed, setCompleted] = useState(false);
   const rowLength = BOX_DATA[0].length;
 
   //doble forloop para saber el largo ( canftidad de cajaas con UNOS )
-  let boxNum = 7;
+
+  let sum = 0;
+  for (let i = 0; i < BOX_DATA.length; i++) {
+    for (let j = 0; j < BOX_DATA[i].length; j++) {
+      sum += BOX_DATA[i][j];
+    }
+  }
+  const boxNum = sum;
 
   useEffect(() => {
     const timeId = setTimeout(() => {
-      if (numsClicked.length > 0 && completed == true) {
+      if (numsClicked.length === 0) {
+        setCompleted(false);
+      } else if (numsClicked.length > 0 && completed == true) {
         setNumsClicked(numsClicked.slice(1));
       }
     }, 19000 / 100);
@@ -39,7 +48,7 @@ function App() {
                     const arrIsClicked = [...numsClicked];
                     arrIsClicked.push(mainIndex);
                     setNumsClicked(arrIsClicked);
-                    isCompleted(arrIsClicked.length === boxNum);
+                    setCompleted(arrIsClicked.length === boxNum);
                     console.log(mainIndex);
                   }}
                   className={
