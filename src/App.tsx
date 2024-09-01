@@ -46,7 +46,9 @@ function App() {
                     "border-2  border-black h-10 w-10 " +
                     (numsClicked.includes(mainIndex) ? "bg-lime-700" : "")
                   }
-                  disabled={numsClicked.includes(mainIndex)}
+                  disabled={
+                    numsClicked.includes(mainIndex) || completed === true
+                  }
                 >
                   {/* {mainIndex} */}
                 </button>
