@@ -3,9 +3,11 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 const BOX_DATA = [
-  [1, 1, 1],
-  [1, 0, 0],
-  [1, 1, 1],
+  [1, 1, 1, 1],
+  [1, 0, 0, 0],
+  [1, 1, 1, 0],
+  [1, 0, 0, 0],
+  [1, 0, 0, 0],
 ];
 
 function App() {
