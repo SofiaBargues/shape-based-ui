@@ -1,14 +1,21 @@
-How to create an interactive shape based UI? Uber Frontend
+### 196. Grid Lights Interactive Shape
 
-In this question, the candidate needs to create a shape based on a given 2D array. A shape is a collection of empty boxes placed at values that are true in the provided array.
+**Interview Question:** How to create an interactive Grid Lights shape?  
+**Topic:** JavaScript, React.js, HTML  
+**Difficulty:** Easy  
+**Asked by:** Uber, Rippling
 
-Many users have reported that this question was asked in the frontend coding round of companies like Uber.
+In this challenge, you need to build an interactive shape called **Grid Lights** using a given 2D array.
 
-You might be given a 2D array and needs to create the shape and along with interactivity or shape would be created as part of the initial code.
+The shape is created by rendering an empty box wherever the array value is `1`. Values that are not `1` should not render a selectable box.
 
-Functional Requirement
-Create an empty box where array value is 1.
-User can select a box. Upon selection the box background color should change to #0bcc59.
-Once all boxes are selected then the boxes should auto-deselect based on the order of selection.
-Deselection should be non-interruptible as in once started, we can't stop it.
-During de-selection, user should not be able to select a new box as in disable any box interaction.
+This question has reportedly appeared in frontend coding interviews at companies such as Uber.
+
+## Functional Requirements
+
+- Render an empty box for every `1` in the given 2D array.
+- The user should be able to select a box.
+- When a box is selected, its background color should change to `#0bcc59`.
+- Once all available boxes are selected, the boxes should automatically deselect in the same order they were selected.
+- The deselection process must be non-interruptible.
+- While deselection is in progress, the user should not be able to select any box.
