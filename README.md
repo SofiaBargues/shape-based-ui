@@ -1,4 +1,4 @@
-### 196. Grid Lights Interactive Shape
+### Grid Lights Interactive Shape
 
 **Interview Question:** How to create an interactive Grid Lights shape?  
 **Topic:** JavaScript, React.js, HTML  
